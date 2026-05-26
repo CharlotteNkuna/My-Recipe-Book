@@ -1,0 +1,114 @@
+<!-- <div>
+
+    <h1>See Our Recipes</h1>
+
+    <div class="recipe-card" *ngFor="let recipe of recipeList">
+
+        <h2>{{ recipe.name }}</h2>
+        <img [src]="recipe.image" [alt]="recipe.name">
+        <p>{{ recipe.description }}</p>
+        <p><strong>Category:</strong> {{ recipe.category }}</p>
+        <p><strong>Prep Time:</strong> {{ recipe.prepTime }} min</p>
+        <p><strong>Cook Time:</strong> {{ recipe.cookTime }} min</p>
+        <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+        <p><strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+
+        <h4>Ingredients:</h4>
+        <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient }}
+            </li>
+        </ul>
+
+        <h4>Steps:</h4>
+        <ol>
+            <li *ngFor="let step of recipe.steps">
+                {{ step }}
+            </li>
+        </ol>
+
+    </div>
+
+</div> -->
+
+
+
+   <div class="container">
+
+    <h1 class="title">See Our Recipes</h1>
+  
+    <div class="search-bar">
+      <input 
+        type="text" 
+        placeholder="Search recipes..." 
+        [(ngModel)]="searchText"
+      />
+    </div>
+
+    <div class="category-filters">
+
+        <button 
+          (click)="setCategory('All')"
+          [class.active]="selectedCategory === 'All'">
+          All
+        </button>
+      
+        <button 
+          (click)="setCategory('Breakfast')"
+          [class.active]="selectedCategory === 'Breakfast'">
+          Breakfast
+        </button>
+      
+        <button 
+          (click)="setCategory('Dinner')"
+          [class.active]="selectedCategory === 'Dinner'">
+          Dinner
+        </button>
+      
+        <button 
+          (click)="setCategory('Dessert')"
+          [class.active]="selectedCategory === 'Dessert'">
+          Dessert
+        </button>
+      
+      </div>
+  
+    <h2>🔥 Top Picks</h2>
+  
+    <div class="recipe-grid">
+      <div class="recipe-card" *ngFor="let recipe of topRecipes()">
+  
+        <img class="recipe-img" [src]="recipe.image">
+  
+        <div class="card-body">
+          <h2>{{ recipe.name }}</h2>
+          <p>{{ recipe.description }}</p>
+  
+          <button class="btn" type="button" (click)="viewDetails(recipe)">
+            View Recipe
+          </button>
+  
+        </div>
+  
+      </div>
+    </div>
+  
+    <h2>🍽 More Recipes</h2>
+  
+    <div class="recipe-grid">
+      <div class="recipe-card" *ngFor="let recipe of bottomRecipes()">
+  
+        <img class="recipe-img" [src]="recipe.image">
+  
+        <div class="card-body">
+          <h2>{{ recipe.name }}</h2>
+  
+          <button class="btn" type="button" (click)="viewDetails(recipe)">
+            View Recipe
+          </button>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>

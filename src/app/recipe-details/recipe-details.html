@@ -1,0 +1,50 @@
+<div class="details-container" *ngIf="recipe">
+
+    <!-- HEADER IMAGE -->
+    <div class="hero">
+      <img [src]="recipe.image" class="hero-img">
+  
+      <button class="back-btn" (click)="goBack()">
+        ⬅ Back
+      </button>
+  
+      <button class="fav-btn" (click)="toggleFavourite()">
+        {{ isFavourite() ? '❤️ Saved' : '🤍 Save' }}
+      </button>
+    </div>
+  
+    <!-- TITLE -->
+    <h1>{{ recipe.name }}</h1>
+  
+    <p class="desc">{{ recipe.description }}</p>
+  
+    <!-- META -->
+    <div class="meta">
+      <span>⏱ {{ recipe.prepTime + recipe.cookTime }} min</span>
+      <span>🍽 {{ recipe.servings }} servings</span>
+      <span>⭐ {{ recipe.difficulty }}</span>
+    </div>
+  
+    <!-- INGREDIENTS -->
+    <h2>Ingredients</h2>
+    <div class="box">
+      <ul>
+        <li *ngFor="let item of recipe.ingredients">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  
+    <!-- STEPS -->
+    <h2>Steps</h2>
+    <div class="box">
+      <ol>
+        <li *ngFor="let step of recipe.steps">
+          {{ step }}
+        </li>
+      </ol>
+    </div>
+
+    
+  
+  </div>

@@ -1,0 +1,60 @@
+<!-- <div class="container">
+
+    <h1>Saved Recipes</h1>
+  
+    <div class="recipe-grid">
+  
+      <div class="recipe-card" *ngFor="let recipe of favourites">
+  
+        <img [src]="recipe.image">
+  
+        <h2>{{ recipe.name }}</h2>
+  
+        <button (click)="openRecipe(recipe.id)">
+          View Recipe
+        </button>
+  
+      </div>
+  
+    </div>
+  
+  </div> -->
+
+
+  <div class="container">
+
+    <h1>Saved Recipes</h1>
+    <br>
+  
+    <div class="recipe-grid">
+  
+      <div class="recipe-card" *ngFor="let recipe of favourites">
+  
+        <img [src]="recipe.image" />
+  
+        <h2>{{ recipe.name }}</h2>
+        <p>{{recipe.description}}</p>
+  
+        <!-- ⭐ RATING -->
+        <div class="stars">
+            <span
+            *ngFor="let star of [1,2,3,4,5]"
+            (click)="rate(recipe.id, star)"
+            [class.active]="ratings[recipe.id] >= star">
+            ⭐
+          </span>
+  
+          <small>
+            Rated: {{ ratings[recipe.id] || 0 }}/5
+          </small>
+        </div>
+  
+        <button (click)="openRecipe(recipe.id)">
+          View Recipe
+        </button>
+  
+      </div>
+  
+    </div>
+  
+  </div>
