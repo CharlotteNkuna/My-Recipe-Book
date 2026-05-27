@@ -62,7 +62,7 @@
 
             <!-- SLIDE 3 -->
             <div class="hero-slide">
-                <img src="/choc.jpg" alt="Cake">
+                <img src="/chocolate.jpg" alt="Cake">
             </div>
 
             <!-- SLIDE 4 -->
@@ -91,9 +91,6 @@
     </section>
 
 
-
-    
-
     <!-- FEATURED SECTION -->
     <section class="featured-section">
 
@@ -103,16 +100,11 @@
 
             <!-- CARD 1 -->
             <div class="card">
-
-                <img src="/spaghetti.jpg" alt="Pasta">
-
+                <img [src]="recipeList[0].image" alt="{{ recipeList[0].name }}">
                 <div class="card-content">
 
-                    <h3>Dinner</h3>
-
-                    <p>
-                        Explore creamy pastas and spaghettis comfort food.
-                    </p>
+                    <h3>{{recipeList[0].name}}</h3>
+                    <p>{{recipeList[0].description}}</p>
 
                 </div>
 
@@ -121,16 +113,11 @@
             <!-- CARD 2 -->
             <div class="card">
 
-                <img src="/avocado.jpg" alt="Burger">
-
+                <img [src]="recipeList[1].image" alt="{{ recipeList[1].name }}">
                 <div class="card-content">
 
-                    <h3>Breakfast Favourites</h3>
-
-                    <p>
-                        Sandwiches, smoothies and quick
-                        meals packed with flavour.
-                    </p>
+                    <h3>{{recipeList[1].name}}</h3>
+                    <p>{{recipeList[1].description}}</p>
 
                 </div>
 
@@ -139,16 +126,11 @@
             <!-- CARD 3 -->
             <div class="card">
 
-                <img src="/chocolate.jpg" alt="Cake">
-
+                <img [src]="recipeList[5].image" alt="{{ recipeList[5].name }}">
                 <div class="card-content">
 
-                    <h3>Sweet Desserts</h3>
-
-                    <p>
-                        Cakes, brownies and delicious desserts
-                        for every sweet tooth.
-                    </p>
+                    <h3>{{recipeList[5].name}}</h3>
+                    <p>{{recipeList[5].description}}</p>
 
                 </div>
 
